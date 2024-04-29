@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 #ifndef MAIN_H_
 #define MAIN_H_
 
@@ -15,6 +9,37 @@
 #include "delay.h"
 #include "esp8266.h"
 /**************	Section: Macro Definitions Declarations *****/
+
+
+#define MESSAGES_BUFFER_SIZE 1000
+#define LOGIC_ANALYZER_NUM_CHANNELS 4
+
+#define LOGIC_ANALYZER_CH_1 0
+#define LOGIC_ANALYZER_CH_2 1
+#define LOGIC_ANALYZER_CH_3 2
+#define LOGIC_ANALYZER_CH_4 3
+
+
+#define SSID_NAME "TestWifi"
+#define SSID_PASS "Password"
+#define RHOST "192.168.137.9"
+#define RPORT 500
+
+
+#define channelMsgSize 12
+
+/* Packet Headers and Its Sizes */
+
+#define packetStart '@'
+#define packetStartSize 1
+
+#define packetChannelsUpdate  '!'
+#define packetChannelsUpdateSize  1
+
+
+#define packetEnd  '@'
+#define packetEndSize 1
+
 /**************	Section: Macro Functions Declarations *******/
 /**************	Section: Data Types Declarations ************/
 

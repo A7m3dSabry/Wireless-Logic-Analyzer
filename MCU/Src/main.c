@@ -1,31 +1,5 @@
-
 #include "main.h"
 
-
-
-#define MESSAGES_BUFFER_SIZE 1000
-#define LOGIC_ANALYZER_NUM_CHANNELS 4
-
-#define LOGIC_ANALYZER_CH_1 0
-#define LOGIC_ANALYZER_CH_2 1
-#define LOGIC_ANALYZER_CH_3 2
-#define LOGIC_ANALYZER_CH_4 3
-
-
-#define SSID_NAME "TestWifi"
-#define SSID_PASS "Password"
-#define RHOST "192.168.137.9"
-
-
-/* Packet Headers and Its Sizes */
-uint8_t packetStart = '@';
-#define packetStartSize 1
-
-uint8_t packetChannelsUpdate = '!';
-#define packetChannelsUpdateSize  1
-
-uint8_t packetEnd = '@';
-#define packetEndSize 1
 
 /* Buffer to Hold Old Captures Values */
 uint16_t oldCaptures[LOGIC_ANALYZER_NUM_CHANNELS] = {0};
@@ -42,18 +16,11 @@ uint32_t lastMsgIndex = 0;
 /* WiFi Module Config */
 ESP8266_Config_t espConfig = {0};
 
-
-
-#define channelMsgSize 12
-
 /* Buffer Stores Messages to Be Sent */
 Channel_Msg_t msgsBuff[MESSAGES_BUFFER_SIZE] = {0};
 
-
-
 /* Array of Struct to Hold Mapping to the Channels Input Pins */
 ChannelsInputPins_t channelsInputPins[LOGIC_ANALYZER_NUM_CHANNELS] = {0};
-
 
 
 
@@ -127,7 +94,7 @@ void forceConnectToServerIP(ESP8266_ResponseType_t *res) {
     do {
 
         (*res) = HAL_ESP8266_startUART_WIFI_PassThroughConnection(&espConfig, ESP8266_ProtocolType_TCP, RHOST,
-                                                                  500,
+                                                                  RPORT,
                                                                   NULL);
         if ((*res) == ESP8266_Return_ERROR) {
             HAL_Delay_ms(100);
