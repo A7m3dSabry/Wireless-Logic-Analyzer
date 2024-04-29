@@ -80,22 +80,9 @@ ESP8266_ResponseType_t HAL_ESP8266_Init(ESP8266_Config_t *restrict esp) {
         Pattern_Init(&patternManager.patterns[1], "ERROR\r\n", 0);
         Pattern_Init(&patternManager.patterns[2], "FAIL\r\n", 0);
         Pattern_Init(&patternManager.patterns[3], "Ai-Thinker Technology Co. Ltd.\r\n\r\nready\r\n", 0);
-        // Made Error
-//    Pattern_Init(&patternManager.patterns[2],"CONNECT\r\n",0);
-//    Pattern_Init(&patternManager.patterns[3],"CLOSED\r\n",0);
-        // Ignored Flags
+
         Pattern_Init(&patternManager.patterns[4], "busy s...\r\n", 0);
 
-
-
-//    // TODO: Fix Pattern Add and use it
-//    Pattern_Add(&patternManager, "OK\r\n", 0, STD_ON);
-//    Pattern_Add(&patternManager, "ERROR\r\n", 0, STD_ON);
-//    Pattern_Add(&patternManager, "SEND OK\r\n", 0, STD_ON);
-//    Pattern_Add(&patternManager, "CONNECT\r\n", 0, STD_ON);
-//    Pattern_Add(&patternManager, "CLOSED\r\n", 0, STD_ON);
-//    // Ignored Flags
-//    Pattern_Add(&patternManager, "busy s...\r\n", 0, STD_ON);
 
 
         if (esp->selectedConfigs & ESP8266_SelectedConfigs_BasicConfigs) {
