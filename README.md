@@ -8,6 +8,9 @@ Continuous monitoring of logic signal channels for real-time analysis. Inspired 
 <br>
 the project tested with UART protocol with baudrate of 200,000.
 
+## System Architecture
+![](assets/System-Architecture.png)
+
 ## Modules
 
 
