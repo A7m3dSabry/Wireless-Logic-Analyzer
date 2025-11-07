@@ -21,8 +21,8 @@ requirements
  - [x] ability of horizontally zooming
  - [x] ability of auto scroll with new updates (live monitoring)
  - [x] support multi channel monitoring
- - [] add decoding engines for different protocols.
- - [] add ability to do certian actions based on some patterns in the data.
+ - [ ] add decoding engines for different protocols.
+ - [ ] add ability to do certian actions based on some patterns in the data.
  
  
 ### Monitoring chip
@@ -41,4 +41,7 @@ the chip is responsible for continously monitor the logic level on the buses usi
 		- new_caputre : the timer value when the bus left the state
 		- counter : number of timer overflows happend while the the bus state didn't change.
 		
+## Test
+
+![wireless logic analyizer test](https://github.com/A7m3dSabry/Wireless-Logic-Analyzer/blob/main/assets/WirelessLogicAnalyzer_test.gif)
 
